@@ -3,6 +3,7 @@ body {
     background-color: #f8bbd0;
     color: #880e4f;
     font-family: 'Helvetica', sans-serif;
+    background: #f7c1d7 !important; /* Force background color */
 }
 .stButton>button {
     background-color: #ff6095;
