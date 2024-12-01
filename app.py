@@ -2,6 +2,13 @@ import streamlit as st
 import torch
 import pandas as pd
 
+def load_css(css_file_path):
+    with open(css_file_path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css('style.css')
+
+
 class MinimalTransformer(torch.nn.Module):
     def __init__(self, vocab_size, embed_size, num_heads, forward_expansion, gender_size):
         super(MinimalTransformer, self).__init__()
@@ -90,9 +97,9 @@ model, dataset = load_resources()
 # Generates name
 if st.button("Kurti vardą"):
     generated_name = sample(model, dataset, start_str=start_str, max_length=20, temperature=0.1, gender=gender)
-    st.success(f"Generated Name: {generated_name}")
+    st.success(f"Jūsų vardas: {generated_name}")
 
 # Generates a very creative name
 if st.button("Aš influenceris"):
     generated_name = sample(model, dataset, start_str=start_str, max_length=20, temperature=2.0, gender=gender)
-    st.success(f"Max Creative Name: {generated_name}")
+    st.success(f"Jūsų vardas: {generated_name}")

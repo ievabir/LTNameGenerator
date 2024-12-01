@@ -1,0 +1,28 @@
+/* style.css */
+body {
+    background-color: #f8bbd0;
+    color: #880e4f;
+    font-family: 'Helvetica', sans-serif;
+}
+.stButton>button {
+    background-color: #ff6095;
+    color: white;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.stTextInput>div>input {
+    background-color: #fce4ec;
+    color: #880e4f;
+}
+.stSelectbox>div>div>input {
+    background-color: #fce4ec;
+    color: #880e4f;
+}
+.stSlider>div>div>div>input {
+    background-color: #fce4ec;
+}
+.stText {
+    color: #880e4f;
+}
