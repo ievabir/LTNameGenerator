@@ -1,0 +1,21 @@
+# Virtual environment
+.venv/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+.Trashes
+._*
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Streamlit files
+.streamlit/
+
+# Logs and temporary files
+*.log
+*.tmp
+
