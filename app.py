@@ -96,7 +96,7 @@ model, dataset = load_resources()
 
 # Generates name
 if st.button("Kurti vardą"):
-    generated_name = sample(model, dataset, start_str=start_str, max_length=20, temperature=0.1, gender=gender)
+    generated_name = sample(model, dataset, start_str=start_str, max_length=20, temperature=0.5, gender=gender)
     st.success(f"Jūsų vardas: {generated_name}")
 
 # Generates a very creative name
