@@ -11,6 +11,11 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+.stButton>button:hover {
+    background-color: #e91e63; /* Slightly darker pink on hover */
+    color: #ffffff; /* Ensure text remains white */
 }
 .stTextInput>div>input {
     background-color: #fce4ec;
