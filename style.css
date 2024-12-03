@@ -31,3 +31,28 @@ body {
 .stText {
     color: #880e4f;
 }
+
+.star {
+    width: 100px;  
+    aspect-ratio: 1;
+    background: #F8BBE1;
+    clip-path: polygon(
+      50% 0,
+      calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+      calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn)))
+    ); 
+    position: fixed;
+    top: 20%;
+    z-index: 100;
+  }
+  
+  .star.left {
+    left: 10px; /* Adjust for desired position */
+  }
+  
+  .star.right {
+    right: 10px; /* Adjust for desired position */
+  }
+  

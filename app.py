@@ -104,17 +104,9 @@ if st.button("Aš influenceris"):
     generated_name = sample(model, dataset, start_str=start_str, max_length=20, temperature=2.0, gender=gender)
     st.success(f"Jūsų vardas: {generated_name}")
 
-    st.markdown("""
-        <script>
-        const influencerButton = [...document.querySelectorAll('.stButton button')]
-          .find(el => el.innerText === "Aš influenceris");
-        influencerButton.addEventListener("click", function() {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-        });
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    """, unsafe_allow_html=True)
+#Add stars
+st.markdown("""
+<div class="star left"></div>
+<div class="star right"></div>
+""", unsafe_allow_html=True)
+
