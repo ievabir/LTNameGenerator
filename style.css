@@ -33,7 +33,7 @@ body {
 }
 
 .star {
-    width: 100px;  
+    width: 200px;  
     aspect-ratio: 1;
     background: #F8BBE1;
     clip-path: polygon(
@@ -49,10 +49,10 @@ body {
   }
   
   .star.left {
-    left: 10px; /* Adjust for desired position */
+    left: 5px; /* Adjust for desired position */
   }
   
   .star.right {
-    right: 10px; /* Adjust for desired position */
+    right: 5px; /* Adjust for desired position */
   }
   
