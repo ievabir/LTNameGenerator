@@ -1,13 +1,12 @@
 /* style.css */
 body {
-    background-color: #f8bbd0;
+    background-color: #f7c1d7; /* Force background color */
     color: #880e4f;
     font-family: 'Helvetica', sans-serif;
-    background: #f7c1d7 !important; /* Force background color */
 }
 .stButton>button {
-    background-color: #ff6095;
-    color: white;
+    background-color: #ff6095; /* Pink button background */
+    color: #ffffff; /* White button text */
     border-radius: 12px;
     padding: 10px 20px;
     font-size: 16px;
