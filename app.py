@@ -78,14 +78,14 @@ def sample(model, dataset, start_str='a', max_length=20, temperature=1.0, gender
 
 # Interface
 st.title("Lietuviškų vardų generatorius")
-st.write("Ar jums trūksta idėjų? Ar norite unikalaus vardo, kurio neturėtų niekas Lietuvoje? Leiskite dirbtiniam intelektui sugalvoti jums vardą!")
+st.write("Lietuvai užtenka Lukų ir Gabrielių. Duokite savo vaikui tikrai unikalų vardą.")
 
 
 # Inputs
 start_str = st.text_input("Vardo pradžia:", "A")
 gender_input = st.selectbox("Lytis:", ["berniukas", "mergaitė"])
 
-# Fixing issues due to localized gender :D
+# Gender localization :D
 gender_translation = {
     'berniukas': 'male',
     'mergaitė': 'female'
@@ -94,19 +94,38 @@ gender = gender_translation[gender_input]
 
 model, dataset = load_resources()
 
+def validate_input(input_str):
+    if not input_str.strip():
+        return "Įveskite bent vieną raidę 😡"
+    if len(input_str) > 20:
+        return "Įvesta per daug teksto. Maksimalus ilgis 20 raidžių. 😡"
+    return None
+
+
 # Generates name
-if st.button("Kurti vardą"):
-    generated_name = sample(model, dataset, start_str=start_str, max_length=20, temperature=0.5, gender=gender)
-    st.success(f"Jūsų vardas: {generated_name}")
+if st.button("Kurti vardą 🧸"):
+    validation_error = validate_input(start_str)
+    if validation_error:
+        st.error(validation_error)
+    else:
+        try:
+            generated_name = sample(model, dataset, start_str=start_str, max_length=20, temperature=0.5, gender=gender)
+            st.success(f"Jūsų vardas: {generated_name.lower().capitalize()}")
+        except KeyError: 
+            st.error("Nežinau, ką čia įvedėt, bet pabandykit įvesti kelias lietuviškos abėcėlės raides.",icon="🚨")
+        
 
 # Generates a very creative name
-if st.button("Aš influenceris"):
-    generated_name = sample(model, dataset, start_str=start_str, max_length=20, temperature=2.0, gender=gender)
-    st.success(f"Jūsų vardas: {generated_name}")
+if st.button("Aš influenceris ✨"):
+    validation_error = validate_input(start_str)
+    if validation_error:
+        st.error(validation_error)
+    else:
+        try:
+            generated_name = sample(model, dataset, start_str=start_str, max_length=20, temperature=2.0, gender=gender)
+            st.success(f"Jūsų vardas: {generated_name.lower().capitalize()}")
+        except KeyError:
+            st.error("Nežinau, ką čia įvedėt, bet pabandykit įvesti kelias lietuviškos abėcėlės raides.",icon="🚨")
 
-#Add stars
-st.markdown("""
-<div class="star left"></div>
-<div class="star right"></div>
-""", unsafe_allow_html=True)
+
 

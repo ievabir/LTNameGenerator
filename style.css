@@ -32,6 +32,7 @@ body {
     color: #880e4f;
 }
 
+/* Currently removed from UI. Just star graphics. */
 .star {
     width: 200px;  
     aspect-ratio: 1;
